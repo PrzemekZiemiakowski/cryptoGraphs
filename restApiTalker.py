@@ -28,13 +28,13 @@ def readData():
     print(json)
     coins =json['data']
     return coins
-    data_list=[]
-
-    for x in coins:
-        name=x['slug']
-        actPrice=x['quote']['USD']['price']
-        volume=x['quote']['USD']['volume_24h']
-        print("name= ",name,"cena= ",actPrice,"volume= ",volume)
-        volumeDesc="A measure of how much of a cryptocurrency was traded in the last 24 hours"
-        actPriceDesc=""
-        return json
+    # data_list=[]
+    #
+    # for x in coins:
+    #     name=x['slug']
+    #     actPrice=x['quote']['USD']['price']
+    #     volume=x['quote']['USD']['volume_24h']
+    #     print("name= ",name,"cena= ",actPrice,"volume= ",volume)
+    #     volumeDesc="A measure of how much of a cryptocurrency was traded in the last 24 hours"
+    #     actPriceDesc=""
+    #     return json

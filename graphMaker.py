@@ -15,8 +15,8 @@ def makeGraph(data):
     print(dataPlot)
     fig = plt.figure(
         FigureClass=Waffle,
-        rows=15,
-        columns=27,
+        rows=10,
+        columns=12,
         values=dataPlot,
         rounding_rule='nearest',
         title={
