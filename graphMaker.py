@@ -18,7 +18,9 @@ def makeGraph(data):
         dataPlot.update({name: volume})
     print(dataPlot)
     labels = [f"{k} ({round(v / sum(dataPlot.values()) * 100, 2)}%)" for k, v in dataPlot.items()]
-    squarify.plot(sizes, label=labels,pad=True)
+    plt.figure(figsize=(32, 18), dpi=80)
+    squarify.plot(sizes, label=labels,alpha=.8)
+
     plt.axis('off')
     plt.show()
     fig = plt.figure(
