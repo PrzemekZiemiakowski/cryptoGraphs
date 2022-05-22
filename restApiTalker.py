@@ -23,11 +23,13 @@ params = {
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 def readData():
     json= requests.get(url, params=params, headers=headers).json()
-    return json
+
 
     print(json)
     coins =json['data']
+    return coins
     data_list=[]
+
     for x in coins:
         name=x['slug']
         actPrice=x['quote']['USD']['price']
@@ -35,3 +37,4 @@ def readData():
         print("name= ",name,"cena= ",actPrice,"volume= ",volume)
         volumeDesc="A measure of how much of a cryptocurrency was traded in the last 24 hours"
         actPriceDesc=""
+        return json
