@@ -8,18 +8,17 @@ def makeGraph(data):
     #preparing data
     dataPlot={}
     sizes=[]
-    labels=[]
     for x in data:
         name=x['slug']
         volume = x['quote']['USD']['volume_24h']
         sizes.append(volume)
-        labels.append(name)
         actPrice = x['quote']['USD']['price']
 
         print(name," volume: ",volume)
         dataPlot.update({name: volume})
     print(dataPlot)
-    squarify.plot(sizes, label=labels)
+    labels = [f"{k} ({round(v / sum(dataPlot.values()) * 100, 2)}%)" for k, v in dataPlot.items()]
+    squarify.plot(sizes, label=labels,pad=True)
     plt.axis('off')
     plt.show()
     fig = plt.figure(
