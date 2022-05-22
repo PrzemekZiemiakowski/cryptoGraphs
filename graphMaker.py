@@ -24,11 +24,13 @@ def makeGraph(data):
     plt.axis('off')
     plt.show()
     fig = plt.figure(
+        figsize=(16,9), dpi=80,alpha=.8,
         FigureClass=Waffle,
         rows=10,
-        columns=12,
+        columns=11,
         values=dataPlot,
         rounding_rule='nearest',
+        plot_anchor='S',
         title={
             'label': 'Udział kryptowalut na rynku po 24h obrotu',
             'loc': 'left',
@@ -38,5 +40,7 @@ def makeGraph(data):
         },
         labels=[f"{k} ({round(v / sum(dataPlot.values()) * 100,2)}%)" for k, v in dataPlot.items()],
         legend={'loc': 'upper left', 'bbox_to_anchor': (1, 1)}
+
     )
+    fig.set_facecolor('#DDDDDD')
     plt.show()
